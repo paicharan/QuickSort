@@ -8,7 +8,7 @@ template<typename T>
 class QuickSort
 {
     public:
-        QuickSort(T *a, int length, std::function<void(T,T)> &isGreater);
+        QuickSort(T *a, int length, std::function<bool(T,T)> isGreater);
         void sort();
         ~QuickSort();
     private:
@@ -21,7 +21,7 @@ class QuickSort
         T *mA;
 };
 
-template<typename T> QuickSort<T>::QuickSort(T *a, int length, std::function<void(T,T)> &func)
+template<typename T> QuickSort<T>::QuickSort(T *a, int length, std::function<bool(T,T)> func)
 {
     isGreater = func;
     mA = a;
